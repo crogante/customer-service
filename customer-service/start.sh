@@ -4,9 +4,9 @@ set -e
 echo "🛑 Deteniendo servicios previos..."
 docker compose down -v
 
-# 1️⃣ Levanta Postgres, RabbitMQ y Keycloak
-echo "Iniciando Postgres, RabbitMQ y Keycloak..."
-docker compose up -d postgres rabbitmq keycloak
+# 1️⃣ Levanta Postgres, RabbitMQ, Keycloak y Customer Service
+echo "Iniciando Postgres, RabbitMQ, Keycloak y Customer Service..."
+docker compose up -d postgres rabbitmq keycloak customer-service
 
 # 2️⃣ Espera que Postgres esté listo
 echo "Esperando que Postgres esté disponible..."
@@ -31,9 +31,9 @@ done
 
 echo "Servicios externos listos ✅"
 
-# 5️⃣ Construye y levanta la app
-echo "Construyendo y levantando la aplicación..."
-docker compose up --build -d customer-service
+# 5️⃣ (Opcional) Construye la app si es necesario
+echo "Si necesitas reconstruir la aplicación, ejecuta:"
+echo "docker compose up --build -d customer-service"
 echo "Aplicación levantada en http://localhost:8080"
 
 echo "👉 Podés correr tu aplicación localmente con perfil 'dev'."
