@@ -1,0 +1,8 @@
+com\company\customerservice\service\ClientServiceTest.class
+com\company\customerservice\messaging\MessagingIntegrationTest.class
+com\company\customerservice\controller\ClientControllerTest.class
+com\company\customerservice\util\ClientMapperTest.class
+com\company\customerservice\repository\ClientRepositoryTest.class
+com\company\customerservice\service\MetricServiceTest.class
+com\company\customerservice\util\MetricServiceTest.class
+com\company\customerservice\util\TimeServiceTest.class
