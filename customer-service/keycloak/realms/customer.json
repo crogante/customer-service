@@ -1,0 +1,32 @@
+{
+  "realm": "customer",
+  "enabled": true,
+  "id": "customer-id",
+  "displayName": "Customer Realm",
+  "clients": [
+    {
+      "clientId": "customer-service",
+      "enabled": true,
+      "publicClient": false,
+      "secret": "MpzO6ufpmpFYGyn7VfRSx9WpqFQsxL6F",
+      "directAccessGrantsEnabled": true,
+      "protocol": "openid-connect",
+      "redirectUris": ["http://localhost:8080/*"],
+      "webOrigins": ["*"]
+    }
+  ],
+  "users": [
+    {
+      "username": "testuser",
+      "enabled": true,
+      "emailVerified": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "testuser",
+          "temporary": false
+        }
+      ]
+    }
+  ]
+}
