@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import org.springframework.security.access.prepost.PreAuthorize;
 
 @RestController
 @RequestMapping("/api/clients")
@@ -22,6 +23,7 @@ public class ClientController {
      * Crear un nuevo cliente
      */
     @PostMapping
+    @PreAuthorize("hasRole('USER')")
     public ResponseEntity<ClientResponse> createClient(@Valid @RequestBody ClientRequest request) {
         return ResponseEntity.ok(clientService.createClient(request));
     }
@@ -30,6 +32,7 @@ public class ClientController {
      * Listar todos los clientes
      */
     @GetMapping
+    @PreAuthorize("hasRole('USER')")
     public ResponseEntity<List<ClientResponse>> getAllClients() {
         return ResponseEntity.ok(clientService.getAllClients());
     }
@@ -38,6 +41,7 @@ public class ClientController {
      * Obtener métricas: promedio y desviación estándar de las edades
      */
     @GetMapping("/metrics")
+    @PreAuthorize("hasRole('USER')")
     public ResponseEntity<MetricsResponse> getMetrics() {
         return ResponseEntity.ok(clientService.getMetrics());
     }
